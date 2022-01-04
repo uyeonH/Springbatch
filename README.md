@@ -13,7 +13,7 @@
 
 ### 프로젝트 구성 순서
 
-1. `@Configuration 선언
+1. `@Configuration` 선언
 2. JobBuilderFactory
    - JobBuilder 생성 -> Job 생성
 3. StepBuilderFactory
@@ -45,7 +45,7 @@ docker pull mysql
 # 다운로드한 Docker Image 확인
 docker images 
 # 컨테이너 생성 및 실행
-docker run -p 3306:3306 --name springboot-mysql -e MYSQL_ROOT_PASSWORD=0000 -e MYSQL_DATABASE=springboot -e MYSQL_USER=yooyeon -e MYSQL_PASSWORD=0000 -d mysql
+docker run -p 3306:3306 --name springboot-mysql -e MYSQL_ROOT_PASSWORD=0000 -e MYSQL_DATABASE=springbatch -e MYSQL_USER=yooyeon -e MYSQL_PASSWORD=0000 -d mysql
 # docker container 리스트
 docker ps -a
 ```
