@@ -15,6 +15,9 @@ spring:
       username: sa
       password:
       driver-class-name: org.h2.Driver
+  batch:
+    jdbc:
+      initialize-schema: embedded
 ---
 
 spring:
@@ -23,10 +26,10 @@ spring:
       on-profile: mysql
   datasource:
     hikari:
-      jdbc-url: jdbc:mysql://localhost:3306/springboot?useUnicode=true&characterEncoding=utf8
+      jdbc-url: jdbc:mysql://localhost:3306/springbatch?useUnicode=true&characterEncoding=utf8
       username: yooyeon
-      password: 0000
-      driver-class-name: com.mysql.jdbc.Driver
+      password: yooyeon1234@
+      driver-class-name: com.mysql.cj.jdbc.Driver
   batch:
     jdbc:
       initialize-schema: always
