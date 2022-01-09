@@ -194,8 +194,8 @@ batch.jdbc.initialize-schema
     - BATCH_JOB_EXECUTION_PARAMS
         - JobParameter 관련 정보를 저장한다.
     - BATCH_JOB_EXECUTION  
-        - JobExecution과 관련된 정보를 저장한다. 잡이 실행될 때마다 새로운 JobExecution이 생성된다. 
-    - BATCH_JOB_EXECUTION_CONTEXT
+        - JobExecution과 관련된 정보를 저장한다. 잡이 실행될 때마다 새로운 JobExecution이 생성된다.
+- BATCH_JOB_EXECUTION_CONTEXT
         - JobExecution마다 하나의 JobExecution을 가지고있다. 
         - Job이 실행되는 동안 상태정보를 저장한다.
         - Step간 공유할 수 있다.
@@ -205,3 +205,18 @@ batch.jdbc.initialize-schema
     - BATCH_STEP_EXECUTION_CONTEXT
         - Step의 실행동안 여러 상태 정보를 저장한다.
         - Step 간 공유 불가능하다. 
+    
+Job 실행
+BATCH_JOB_INSTANCE 테이블에 job 정보가 생성되었다.
+![./readmeImages/img.png](./readmeImages/img.png)
+
+
+### Job
+- 배치 작업, Flow
+- 하나 이상의 Step을 가져야 함
+- 전체 배치 처리의 최상단 개념
+- 배치 처리 과정을 하나의 단위로 만들어 표현한 객체
+
+- 기본 구현체
+    - SimpleJob: step을 순처적으로 실행, step이 실패하면 job이 실패
+    - FlowJob: flow를 통한 복잡한 처리, 조건/흐름에 따라 step을 구성하여 실행
